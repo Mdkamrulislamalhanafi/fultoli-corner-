@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14243d">
+<title>Fultoli Corner | Fashion for Everyone</title>
+<style>
+:root{--navy:#14243d;--gold:#e7b957;--ink:#172033;--muted:#687386;--line:#e8eaf0}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:#f7f8fb;color:var(--ink)}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+.top{background:var(--navy);color:#fff;text-align:center;padding:9px 12px;font-size:13px}
+header{background:#fff;position:sticky;top:0;z-index:5;box-shadow:0 3px 16px #14243d12}
+.nav{max-width:1180px;margin:auto;padding:14px 18px;display:flex;align-items:center;gap:18px}
+.logo{font-weight:900;font-size:22px;letter-spacing:1px;color:var(--navy);white-space:nowrap}.logo span{color:#c28b26}
+.tag{font-size:10px;letter-spacing:2px;color:var(--muted);display:block;margin-top:3px}
+.search{flex:1;display:flex;background:#f2f4f8;border-radius:30px;padding:5px 12px;min-width:100px}
+.search input{border:0;outline:0;background:transparent;width:100%;padding:8px}
+.navbtn,.btn{border:0;border-radius:24px;padding:11px 17px;background:var(--navy);color:#fff;font-weight:700;cursor:pointer}
+.cartbtn{background:var(--gold);color:#201a0c}
+.hero{background:linear-gradient(110deg,#14243d 0%,#203e60 62%,#9b7135 100%);color:#fff;overflow:hidden}
+.hero-inner{max-width:1180px;margin:auto;padding:62px 22px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.eyebrow{color:#f3d28b;font-size:12px;letter-spacing:3px;font-weight:bold}
+h1{font-size:clamp(34px,5vw,58px);line-height:1.13;margin:14px 0}
+.hero p{color:#e1e8f2;line-height:1.8;max-width:540px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn.gold{background:var(--gold);color:#201a0c}.btn.outline{border:1px solid #ffffff80;background:transparent}
+.hero-art{min-height:260px;border:1px solid #ffffff40;border-radius:28px;background:linear-gradient(145deg,#ffffff20,#ffffff08);display:flex;align-items:center;justify-content:center;text-align:center;padding:25px}
+.hero-art strong{display:block;font-size:clamp(30px,4vw,48px);color:#f6d68e}.hero-art small{letter-spacing:3px;color:#fff}
+.wrap{max-width:1180px;margin:auto;padding:34px 18px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:18px}
+h2{margin:0;font-size:25px;color:var(--navy)}.sub{color:var(--muted);font-size:13px;margin-top:6px}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 12px;text-align:center;font-weight:bold;color:var(--navy);cursor:pointer}
+.cat b{display:block;font-size:27px;margin-bottom:8px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:0 5px 18px #14243d08}
+.photo{position:relative;height:240px;background:#eef1f6;display:flex;align-items:center;justify-content:center;color:#8792a4;font-size:14px;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:top}
+.badge{position:absolute;top:10px;left:10px;background:#d62839;color:#fff;font-size:12px;font-weight:bold;padding:5px 9px;border-radius:20px}
+.old{color:#8a93a3;text-decoration:line-through;font-size:13px;font-weight:400;margin-left:6px}
+.info{padding:14px}.info h3{font-size:16px;margin:0 0 7px}.price{font-weight:800;color:#a87519;font-size:18px}.meta{font-size:12px;color:var(--muted);margin:7px 0 12px}
+.info .btn{width:100%;border-radius:10px;padding:10px}
+.empty{grid-column:1/-1;background:#fff;border:1px dashed #cbd2df;border-radius:15px;padding:35px;text-align:center;color:var(--muted)}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.benefit{background:#fff;border-radius:15px;padding:18px;border:1px solid var(--line)}.benefit b{display:block;margin-bottom:6px;color:var(--navy)}
+footer{background:#101d31;color:#fff;padding:32px 18px}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot p{color:#c6cfdb;line-height:1.7}
+.float{position:fixed;right:17px;bottom:18px;background:#168b54;color:#fff;border-radius:30px;padding:13px 17px;box-shadow:0 7px 25px #0003;z-index:8;font-weight:bold}
+.modal{display:none;position:fixed;inset:0;background:#09132399;z-index:10;align-items:center;justify-content:center;padding:16px}.modal.show{display:flex}
+.panel{background:#fff;border-radius:18px;padding:22px;width:min(520px,100%);max-height:90vh;overflow:auto}.panel h2{margin-bottom:15px}
+.field{display:grid;gap:6px;margin:11px 0}.field label{font-size:13px;font-weight:bold}.field input,.field select,.field textarea{border:1px solid #d9deea;border-radius:9px;padding:11px;width:100%;background:#fff}
+.row{display:flex;gap:9px}.row>*{flex:1}.close{float:right;border:0;background:#eef1f6;border-radius:50%;width:32px;height:32px;cursor:pointer}
+.admin-link{background:none;border:0;color:#d4b46d;text-decoration:underline;cursor:pointer}
+.cartline{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0;gap:12px}
+@media(max-width:800px){.hero-inner{grid-template-columns:1fr;padding:44px 20px}.hero-art{min-height:170px}.products{grid-template-columns:repeat(2,1fr)}.cats{grid-template-columns:repeat(2,1fr)}.benefits{grid-template-columns:1fr}.nav{flex-wrap:wrap}.search{order:3;flex-basis:100%}}
+@media(max-width:390px){.products{gap:9px}.photo{height:180px}.info{padding:10px}.logo{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="top">🔥 সব পণ্যে ২০% ছাড়! 🚚 সারা বাংলাদেশে হোম ডেলিভারি | অর্ডার করতে WhatsApp করুন: 01740117452</div>
+<header><div class="nav">
+ <a class="logo" href="#">FULTOLI <span>CORNER</span><span class="tag">FASHION FOR EVERYONE</span></a>
+ <div class="search"><span>⌕</span><input id="search" placeholder="পণ্য খুঁজুন..." oninput="renderProducts()"></div>
+ <button class="navbtn cartbtn" onclick="openCart()">কার্ট (<span id="cartCount">0</span>)</button>
+</div></header>
+<section class="hero"><div class="hero-inner">
+ <div><div class="eyebrow">WELCOME TO FULTOLI CORNER</div><h1>ছোট থেকে বড়,<br>সবার পছন্দের ফ্যাশন</h1>
+ <p>আপনার প্রতিদিনের স্টাইলের জন্য বেছে নিন আরামদায়ক, ট্রেন্ডি ও মানসম্মত পোশাক। শিশু, নারী ও পুরুষ—সবার জন্য এক ঠিকানা।</p>
+ <div class="hero-actions"><a class="btn gold" href="#products">শপিং শুরু করুন</a><a class="btn outline" href="https://wa.me/8801740117452" target="_blank">WhatsApp-এ কথা বলুন</a></div></div>
+ <div class="hero-art"><div><strong>FULTOLI CORNER</strong><small>STYLE • COMFORT • VALUE</small><p>Fashion for Everyone</p></div></div>
+</div></section>
+<main class="wrap">
+<section><div class="section-head"><div><h2>ক্যাটাগরি</h2><div class="sub">আপনার পছন্দের বিভাগ বেছে নিন</div></div></div>
+<div class="cats">
+ <button class="cat" onclick="filterCat('Kids')"><b>🧒</b>Kids Wear</button>
+ <button class="cat" onclick="filterCat('Men')"><b>👔</b>Men's Wear</button>
+ <button class="cat" onclick="filterCat('Women')"><b>👗</b>Women's Wear</button>
+ <button class="cat" onclick="filterCat('Sports')"><b>🧥</b>Sportswear</button>
+</div></section>
+<section id="products" style="margin-top:38px"><div class="section-head"><div><h2>আমাদের কালেকশন</h2><div class="sub">পণ্য নির্বাচন করে WhatsApp-এ অর্ডার করুন</div></div><button class="btn" onclick="openAdmin()">পণ্য পরিচালনা</button></div>
+<div id="productGrid" class="products"></div></section>
+<section style="margin-top:38px"><div class="section-head"><div><h2>কেন Fultoli Corner?</h2><div class="sub">আপনার সন্তুষ্টিই আমাদের অগ্রাধিকার</div></div></div>
+<div class="benefits"><div class="benefit"><b>✦ মানসম্মত পণ্য</b>যত্নসহকারে বাছাই করা ফ্যাশন কালেকশন।</div><div class="benefit"><b>✦ সাশ্রয়ী মূল্য</b>আপনার বাজেটের মধ্যে পছন্দের পোশাক।</div><div class="benefit"><b>✦ সহজ অর্ডার</b>WhatsApp-এ সরাসরি অর্ডার ও যোগাযোগ।</div></div></section>
+</main>
+<footer><div class="foot"><div><div class="logo" style="color:white">FULTOLI <span>CORNER</span></div><p>ছোট থেকে বড়, সবার পছন্দের ফ্যাশন হাউস।<br>Fashion for Everyone.</p></div><div><b>যোগাযোগ</b><p>WhatsApp: 01740117452<br>সারা বাংলাদেশে ডেলিভারি</p><a class="admin-link" onclick="openAdmin()">Admin / পণ্য পরিচালনা</a></div></div></footer>
+<a class="float" href="https://wa.me/8801740117452" target="_blank">WhatsApp Order</a>
+
+<div class="modal" id="cartModal"><div class="panel"><button class="close" onclick="closeModal('cartModal')">×</button><h2>আপনার কার্ট</h2><div id="cartItems"></div><div class="field"><label>আপনার নাম</label><input id="buyerName" placeholder="নাম লিখুন"></div><div class="field"><label>ডেলিভারি ঠিকানা</label><textarea id="buyerAddress" rows="2" placeholder="সম্পূর্ণ ঠিকানা লিখুন"></textarea></div><button class="btn" style="width:100%" onclick="checkout()">WhatsApp-এ অর্ডার নিশ্চিত করুন</button></div></div>
+<div class="modal" id="adminModal"><div class="panel"><button class="close" onclick="closeModal('adminModal')">×</button><h2>পণ্য পরিচালনা</h2><p class="sub">এই ডেমোতে পরিবর্তনগুলো এই ব্রাউজারেই সংরক্ষিত হবে।</p>
+<div class="field"><label>Admin PIN</label><input id="pin" type="password" placeholder="ডেমো PIN: 2468"></div><button class="btn" onclick="unlockAdmin()">প্রবেশ করুন</button>
+<div id="adminForm" style="display:none"><div class="field"><label>পণ্যের নাম</label><input id="pname" placeholder="যেমন: Premium Hoodie"></div>
+<div class="row"><div class="field"><label>দাম (৳)</label><input id="pprice" type="number" placeholder="850"></div><div class="field"><label>ক্যাটাগরি</label><select id="pcat"><option>Kids</option><option>Men</option><option>Women</option><option>Sports</option></select></div></div>
+<div class="field"><label>ছবির URL (ঐচ্ছিক)</label><input id="pimage" placeholder="https://..."></div><button class="btn" onclick="addProduct()">পণ্য যোগ করুন</button>
+<div class="field"><label>পণ্য মুছুন</label><div id="adminList"></div></div></div></div></div>
+<script>
+const KEY='fultoli_products_v3';
+let products=JSON.parse(localStorage.getItem(KEY)||'null')||[
+ {id:1,name:'France Hoodie – Mbappe 10',price:1250,cat:'Sports',image:'p1.jpg'},
+ {id:2,name:'Brazil Hoodie – Neymar Jr 10',price:1250,cat:'Sports',image:'p2.jpg'},
+ {id:3,name:'Germany Hoodie – 11',price:1250,cat:'Sports',image:'p3.jpg'},
+ {id:4,name:'Argentina Hoodie – Messi 10',price:1250,cat:'Sports',image:'p4.jpg'},
+ {id:5,name:'Kids NY Monogram Tracksuit (Red)',price:1100,cat:'Kids',image:'p5.jpg'},
+ {id:6,name:'Kids Maroon Cargo Sweat Set',price:1050,cat:'Kids',image:'p6.jpg'},
+ {id:7,name:'Kids "Mom Dad My Life Line" Hoodie Set',price:1150,cat:'Kids',image:'p7.jpg'},
+ {id:8,name:'Kids "Daddy\'s Mini" Hoodie Set (Maroon)',price:1150,cat:'Kids',image:'p8.jpg'},
+ {id:9,name:'Kids "I Love Papa" Hoodie Set',price:1100,cat:'Kids',image:'p9.jpg'},
+ {id:10,name:'Kids Royal Blue Cargo Sweat Set',price:1050,cat:'Kids',image:'p10.jpg'}
+];
+let cart=[],activeCat='';const DISCOUNT=20;
+function sale(p){return Math.round(Number(p.price)*(100-DISCOUNT)/100)}
+function save(){localStorage.setItem(KEY,JSON.stringify(products))}
+function money(n){return '৳'+Number(n).toLocaleString('en-US')}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderProducts(){
+ const q=(document.getElementById('search').value||'').toLowerCase();
+ const list=products.filter(p=>(!activeCat||p.cat===activeCat)&&(`${p.name} ${p.cat}`).toLowerCase().includes(q));
+ document.getElementById('productGrid').innerHTML=list.length?list.map(p=>`<article class="card"><div class="photo"><span class="badge">${DISCOUNT}% ছাড়</span>${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}" onerror="this.parentElement.textContent='ছবি পাওয়া যায়নি'">`:'<span>Product Photo</span>'}</div><div class="info"><h3>${esc(p.name)}</h3><div class="price">${money(sale(p))}<span class="old">${money(p.price)}</span></div><div class="meta">${esc(p.cat)} Collection</div><button class="btn" onclick="addCart(${p.id})">কার্টে যোগ করুন</button></div></article>`).join(''):'<div class="empty">এই ক্যাটাগরিতে এখনো পণ্য যোগ করা হয়নি।</div>';
+}
+function filterCat(c){activeCat=activeCat===c?'':c;document.getElementById('products').scrollIntoView({behavior:'smooth'});renderProducts()}
+function addCart(id){let p=products.find(x=>x.id===id);if(p)cart.push(p);document.getElementById('cartCount').textContent=cart.length}
+function openCart(){document.getElementById('cartItems').innerHTML=cart.length?cart.map((p,i)=>`<div class="cartline"><span>${esc(p.name)}</span><b>${money(sale(p))}</b><button onclick="cart.splice(${i},1);openCart();document.getElementById('cartCount').textContent=cart.length">×</button></div>`).join(''):`<p>আপনার কার্ট খালি।</p>`;document.getElementById('cartModal').classList.add('show')}
+function closeModal(id){document.getElementById(id).classList.remove('show')}
+function checkout(){if(!cart.length)return alert('আগে কার্টে পণ্য যোগ করুন।');let name=document.getElementById('buyerName').value.trim(),address=document.getElementById('buyerAddress').value.trim();if(!name||!address)return alert('নাম ও ঠিকানা লিখুন।');let total=cart.reduce((s,p)=>s+sale(p),0);let msg=`Fultoli Corner অর্ডার%0Aনাম: ${encodeURIComponent(name)}%0Aঠিকানা: ${encodeURIComponent(address)}%0A%0A${cart.map(p=>encodeURIComponent(p.name+' - ৳'+sale(p))).join('%0A')}%0Aমোট (${DISCOUNT}% ছাড় সহ): ৳${total}`;window.open('https://wa.me/8801740117452?text='+msg,'_blank')}
+function openAdmin(){document.getElementById('adminModal').classList.add('show')}
+function unlockAdmin(){if(document.getElementById('pin').value!=='2468')return alert('PIN সঠিক নয়।');document.getElementById('adminForm').style.display='block';renderAdmin()}
+function addProduct(){let name=document.getElementById('pname').value.trim(),price=Number(document.getElementById('pprice').value),cat=document.getElementById('pcat').value,image=document.getElementById('pimage').value.trim();if(!name||!price)return alert('পণ্যের নাম ও দাম দিন।');products.unshift({id:Date.now(),name,price,cat,image});save();renderProducts();renderAdmin();document.getElementById('pname').value='';document.getElementById('pprice').value='';document.getElementById('pimage').value=''}
+function renderAdmin(){document.getElementById('adminList').innerHTML=products.map(p=>`<div class="cartline"><span>${esc(p.name)} — ${money(p.price)}</span><button onclick="products=products.filter(x=>x.id!==${p.id});save();renderProducts();renderAdmin()">মুছুন</button></div>`).join('')}
+renderProducts();
+</script>
+</body></html>
